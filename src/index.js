@@ -20,7 +20,7 @@ const App = () => {
     .catch(() => {
       setLoaded({...loaded, isLoaded: false, Status:'Failed'})
     })
-  }, [setLoaded])
+  }, [])
   console.log(loaded);
   return (
     <div>
