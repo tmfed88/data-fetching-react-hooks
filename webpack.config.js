@@ -33,12 +33,21 @@ mode: 'development',
         }
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,    
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {
+            iesafe: true,
+          },
+        },
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.css']
   },
 };

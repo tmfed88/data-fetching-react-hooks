@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from './Image.js';
 
 let Users = ({users, loaded}) => {
     if (!users || users.length === 0) {
@@ -7,10 +8,14 @@ let Users = ({users, loaded}) => {
     } else {
       return users.data.map(user => {
         return( 
-        <div key={user.id}>
-          <h1>{user.name}</h1>
-          <p><strong>Username:</strong> {user.username}</p>
-          <p><strong>Website:</strong> {user.website}</p>
+        <div key={user.id} className="user-container"> 
+           
+          <div className="container">
+            <Image />
+            <h3>{user.name}</h3>
+            <p><strong>Username:</strong> {user.username}</p>
+            <p><strong>Website:</strong> {user.website}</p>
+          </div>
         </div>
         );
       });

@@ -1,3 +1,4 @@
+import './style.css';
 import React, {useEffect, useState} from 'react';
 import {render} from 'react-dom';
 import Users from './components/Users.js';
@@ -26,14 +27,14 @@ const App = () => {
     .catch(() => {
       setLoaded({...loaded, isLoaded: false, Status:'Failed'})
     })
-  }, 3000);
+  }, 1000);
 
   return timeout();
   }, [])
   console.log(loaded);
   return (
     <div>
-      <Users users={users} loaded={loaded.Status}/>
+      <Users users={users} loaded={loaded.Status} />
     </div>
   );       
 }
