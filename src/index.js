@@ -10,9 +10,15 @@ const App = () => {
   const [loaded, setLoaded] = useState({isLoaded: false, Status: 'Loading...'});
   const [users, setUsers] = useState();
   
-  useEffect(async () => {
-    setLoaded({isLoaded: false})
-    await fetchData(getUsers)
+  useEffect(() => {
+    setLoaded({isLoaded: false, Status: 'Loading...'})
+
+    const timeout = () =>{
+        return <div>{loaded.Status}</div>
+    } 
+
+    setTimeout(() => {
+    fetchData(getUsers)
     .then(data => {
       setLoaded({...loaded, isLoaded: true, Status: 'Loaded'}); 
       setUsers({...users, data});
@@ -20,6 +26,9 @@ const App = () => {
     .catch(() => {
       setLoaded({...loaded, isLoaded: false, Status:'Failed'})
     })
+  }, 3000);
+
+  return timeout();
   }, [])
   console.log(loaded);
   return (
