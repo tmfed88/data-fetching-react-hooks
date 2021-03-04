@@ -8,9 +8,9 @@ let Users = ({users, loaded}) => {
     } else {
       return users.data.map(user => {
         return( 
-        <div key={user.id} className="user-container"> 
+        <div key={user.id} className="card-container"> 
            
-          <div className="container">
+          <div className="user-container">
             <Image />
             <h3>{user.name}</h3>
             <p><strong>Username:</strong> {user.username}</p>

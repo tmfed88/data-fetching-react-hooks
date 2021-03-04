@@ -33,7 +33,7 @@ const App = () => {
   }, [])
   console.log(loaded);
   return (
-    <div>
+    <div className="container">
       <Users users={users} loaded={loaded.Status} />
     </div>
   );       

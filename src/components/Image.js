@@ -1,13 +1,12 @@
 import React from 'react';
 import img from '../public/user.svg';
-import Error from '../Error.js';
-
+import ErrorBoundary from '../ErrorBoundary.js';
 
 let Image = () => {
-    return (
-    <Error>        
-        <img src={img} alt="Avatar" style="width:100%" className="left"/>
-    </Error>
+    return (  
+        <ErrorBoundary>    
+            <img src={img} alt="Avatar" className="left"/>
+        </ErrorBoundary>
     )
 }
 
